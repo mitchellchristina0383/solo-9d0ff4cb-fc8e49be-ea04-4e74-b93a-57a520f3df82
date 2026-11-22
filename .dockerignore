@@ -1,0 +1,8 @@
+.git
+data/
+base/
+tests/
+__pycache__/
+*.pyc
+.pytest_cache/
+README.md

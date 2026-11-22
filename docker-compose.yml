@@ -1,0 +1,16 @@
+services:
+  imageflex:
+    build: .
+    image: imageflex:latest
+    ports:
+      - "8000:8000"
+    environment:
+      DATA_DIR: /data
+      BASE_DIR: /app/base
+      MAX_TARGET_MIB: "65536"   # upper bound for /expand requests
+    volumes:
+      - image-data:/data        # published image + at most one extra copy
+    restart: unless-stopped
+
+volumes:
+  image-data:
